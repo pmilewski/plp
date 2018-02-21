@@ -7,6 +7,12 @@ import ShippingInfo from '../ShippingInfo';
 import Filters from '../Filters';
 
 class App extends React.Component {
+  componentDidMount() {
+    window.state = this.props;
+  }
+  componentWillReceiveProps(nextProps) {
+    window.state = nextProps;
+  }
   render() {
     return (
       <div className="app">

@@ -1,9 +1,9 @@
 const categories = [
-  { name: 'Wellingtons' },
-  { name: 'Riding Hat/Stovepipe' },
-  { name: 'Top Hat on Lean' },
-  { name: 'Trilby & Fedora' },
-  { name: 'Derby/Bowler' }
+  { id: 1, name: 'Wellingtons' },
+  { id: 2, name: 'Riding Hat/Stovepipe' },
+  { id: 3, name: 'Top Hat on Lean' },
+  { id: 4, name: 'Trilby & Fedora' },
+  { id: 5, name: 'Derby/Bowler' }
 ];
 
 export default categories;

@@ -1,122 +1,869 @@
+/*
+[
+  {
+    'repeat(20)': {
+      _id: '{{objectId()}}',
+      name: '{{company()}}',
+      description: '{{lorem(1, "sentences")}}',
+      categoryIds: [
+        {
+          'repeat(1,3)':
+          '{{random(1, 2, 3,4,5)}}'
+        }
+      ],
+      variants: [
+        {
+          'repeat(4,6)': {
+           price: '{{floating(1000, 4000, 2, "$0,0.00")}}',
+           picture: 'https://loremflickr.com/320/240',
+           promo: '{{random("bestSeller", "new", "pressFavorites", "", "", "")}}',
+           colorId: '{{random(1, 2, 3,4,5,6,7,8,9,10)}}'
+          }
+        }
+      ]
+    }
+  }
+]
+*/
+
+
 const products = [
   {
-    categories: ['Wellingtons'],
-    colorName: 'Domino',
-    name: 'Citrus Punch Wellington',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_e5943e357cdf48e09a4a939f5daac3b1~mv2_d_3456_4352_s_4_2.jpg/v1/fill/w_389,h_490,q_85,usm_0.66_1.00_0.01/5457e5_e5943e357cdf48e09a4a939f5daac3b1~mv2_d_3456_4352_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_8aa2161810e6440ab7eae120bf5b8598~mv2_d_3456_3536_s_4_2.jpg/v1/fill/w_479,h_490,q_85,usm_0.66_1.00_0.01/5457e5_8aa2161810e6440ab7eae120bf5b8598~mv2_d_3456_3536_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 9,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,566.15"
+      },
+      {
+        "colorId": 3,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,475.40"
+      },
+      {
+        "colorId": 7,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,086.94"
+      },
+      {
+        "colorId": 2,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,806.77"
+      },
+      {
+        "colorId": 6,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,092.23"
+      },
+      {
+        "colorId": 1,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,553.23"
+      }
+    ],
+    "categoryIds": [
+      3,
+      2
+    ],
+    "description": "Culpa aliquip nisi nulla ad nisi.",
+    "name": "Aeora",
+    "_id": "5a8cd322ec960829110f912e"
   },
-
   {
-    categories: ['Wellingtons'],
-    colorName: 'Scuba',
-    name: 'Geometric Wellington',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_0ec39c97e31f498ca11cd6735308760b~mv2_d_3456_4048_s_4_2.jpg/v1/fill/w_418,h_490,q_85,usm_0.66_1.00_0.01/5457e5_0ec39c97e31f498ca11cd6735308760b~mv2_d_3456_4048_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_a011ac7193ab47f9be3fee3131102343~mv2_d_3456_4608_s_4_2.jpg/v1/fill/w_368,h_490,q_85,usm_0.66_1.00_0.01/5457e5_a011ac7193ab47f9be3fee3131102343~mv2_d_3456_4608_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,957.68"
+      },
+      {
+        "colorId": 4,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,462.95"
+      },
+      {
+        "colorId": 6,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,089.39"
+      },
+      {
+        "colorId": 4,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,786.82"
+      },
+      {
+        "colorId": 3,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,003.04"
+      }
+    ],
+    "categoryIds": [
+      4,
+      1,
+      4
+    ],
+    "description": "Aute quis elit in ad commodo deserunt non in.",
+    "name": "Barkarama",
+    "_id": "5a8cd323107589efbea2d391"
   },
-
   {
-    categories: ['Wellingtons'],
-    colorName: 'Derby',
-    name: 'Cosmic Wizard Wellington',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_90deaedd656648a88644bed0ad501a54~mv2_d_3456_4608_s_4_2.jpg/v1/fill/w_368,h_490,q_85,usm_0.66_1.00_0.01/5457e5_90deaedd656648a88644bed0ad501a54~mv2_d_3456_4608_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_422983c96e7e43619473cee25f730d23~mv2_d_3456_3888_s_4_2.jpg/v1/fill/w_436,h_490,q_85,usm_0.66_1.00_0.01/5457e5_422983c96e7e43619473cee25f730d23~mv2_d_3456_3888_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,828.04"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,380.32"
+      },
+      {
+        "colorId": 3,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,209.59"
+      },
+      {
+        "colorId": 5,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,219.24"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,838.12"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,978.98"
+      }
+    ],
+    "categoryIds": [
+      3,
+      1,
+      5
+    ],
+    "description": "Qui amet ex cupidatat mollit do elit nisi labore sunt voluptate velit.",
+    "name": "Netagy",
+    "_id": "5a8cd32374c51b876b8bce2f"
   },
-
   {
-    categories: ['Wellingtons'],
-    colorName: 'Flamingo',
-    name: 'Strawberry Fields Wellington',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_12e8a8c033bf4730b2b93f8e51b9e7e7~mv2_d_3456_3888_s_4_2.jpg/v1/fill/w_436,h_490,q_85,usm_0.66_1.00_0.01/5457e5_12e8a8c033bf4730b2b93f8e51b9e7e7~mv2_d_3456_3888_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_39676d33a6d54d8781f39b840c004466~mv2_d_3456_4016_s_4_2.jpg/v1/fill/w_422,h_490,q_85,usm_0.66_1.00_0.01/5457e5_39676d33a6d54d8781f39b840c004466~mv2_d_3456_4016_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 3,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,777.10"
+      },
+      {
+        "colorId": 10,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,131.76"
+      },
+      {
+        "colorId": 7,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,824.81"
+      },
+      {
+        "colorId": 8,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,159.30"
+      }
+    ],
+    "categoryIds": [
+      5
+    ],
+    "description": "Tempor aliqua Lorem minim dolore sunt excepteur anim sunt enim incididunt deserunt consectetur irure.",
+    "name": "Rooforia",
+    "_id": "5a8cd323c5991271c31d4b71"
   },
-
   {
-    categories: ['Wellingtons'],
-    colorName: 'Roulette',
-    name: 'Le Bon Temps Wellington',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_f72f4ffda7bb43f9ba9e23a9e6c615cf~mv2_d_3456_3856_s_4_2.jpg/v1/fill/w_439,h_490,q_85,usm_0.66_1.00_0.01/5457e5_f72f4ffda7bb43f9ba9e23a9e6c615cf~mv2_d_3456_3856_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_2adb6ed97e64411f827e75fc72d9b622~mv2_d_3456_3904_s_4_2.jpg/v1/fill/w_434,h_490,q_85,usm_0.66_1.00_0.01/5457e5_2adb6ed97e64411f827e75fc72d9b622~mv2_d_3456_3904_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 6,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,701.39"
+      },
+      {
+        "colorId": 3,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,576.94"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,316.09"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,284.63"
+      }
+    ],
+    "categoryIds": [
+      4,
+      4,
+      1
+    ],
+    "description": "Enim voluptate ad ut sit do fugiat eiusmod amet fugiat tempor incididunt magna.",
+    "name": "Xerex",
+    "_id": "5a8cd323b38920810491e357"
   },
-
   {
-    categories: ['Wellingtons'],
-    colorName: 'Scout',
-    name: 'Illusionist Wellington',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_1d5331c11d2a43f096e4d4db6f661e8d~mv2_d_3152_3504_s_4_2.jpg/v1/fill/w_441,h_490,q_85,usm_0.66_1.00_0.01/5457e5_1d5331c11d2a43f096e4d4db6f661e8d~mv2_d_3152_3504_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_8d775dc0bf7f4555ba3ff0dbb4b80997~mv2_d_3456_4112_s_4_2.jpg/v1/fill/w_412,h_490,q_85,usm_0.66_1.00_0.01/5457e5_8d775dc0bf7f4555ba3ff0dbb4b80997~mv2_d_3456_4112_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 2,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,027.04"
+      },
+      {
+        "colorId": 9,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,075.07"
+      },
+      {
+        "colorId": 8,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,165.37"
+      },
+      {
+        "colorId": 5,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,390.22"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,903.10"
+      },
+      {
+        "colorId": 7,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,282.26"
+      }
+    ],
+    "categoryIds": [
+      1,
+      3,
+      1
+    ],
+    "description": "Laborum enim nisi consectetur nisi proident.",
+    "name": "Mixers",
+    "_id": "5a8cd323d5840d26f2a650dc"
   },
-
   {
-    categories: ['Riding Hat/Stovepipe'],
-    colorName: 'Jetty',
-    name: 'Pineapple Flower Power',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_b607161f1ebe434893aa7f35bac4a784~mv2_d_3864_3012_s_4_2.jpg/v1/fill/w_490,h_382,q_85,usm_0.66_1.00_0.01/5457e5_b607161f1ebe434893aa7f35bac4a784~mv2_d_3864_3012_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_74b8ea4dd2b6475788b90a58acfacdb0~mv2_d_3456_3616_s_4_2.jpg/v1/fill/w_468,h_490,q_85,usm_0.66_1.00_0.01/5457e5_74b8ea4dd2b6475788b90a58acfacdb0~mv2_d_3456_3616_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,283.35"
+      },
+      {
+        "colorId": 7,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,954.44"
+      },
+      {
+        "colorId": 2,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,960.00"
+      },
+      {
+        "colorId": 10,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,708.65"
+      }
+    ],
+    "categoryIds": [
+      4,
+      1
+    ],
+    "description": "Consectetur irure magna officia commodo ut commodo minim sint labore ullamco ut et reprehenderit.",
+    "name": "Quilch",
+    "_id": "5a8cd323bf1c0feaefe923ea"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Mallard',
-    name: 'Lemon Paisley Swirl Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_13a11312dbf54d739f82f9e7085aaa0b~mv2_d_3456_3408_s_4_2.jpg/v1/fill/w_490,h_483,q_85,usm_0.66_1.00_0.01/5457e5_13a11312dbf54d739f82f9e7085aaa0b~mv2_d_3456_3408_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_94824d34ab5f493299797bd5b8bfbf5e~mv2_d_3456_3536_s_4_2.jpg/v1/fill/w_479,h_490,q_85,usm_0.66_1.00_0.01/5457e5_94824d34ab5f493299797bd5b8bfbf5e~mv2_d_3456_3536_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 9,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,139.05"
+      },
+      {
+        "colorId": 3,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,143.55"
+      },
+      {
+        "colorId": 7,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,026.42"
+      },
+      {
+        "colorId": 4,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,186.58"
+      }
+    ],
+    "categoryIds": [
+      1,
+      3,
+      3
+    ],
+    "description": "Reprehenderit elit occaecat consectetur dolore ad ut.",
+    "name": "Syntac",
+    "_id": "5a8cd323ef825a46394f512b"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Bebop',
-    name: 'The Fabric of Space-Time, Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_3d152e731c81438fb20824b7b1fc0f03~mv2_d_3456_2960_s_4_2.jpg/v1/fill/w_490,h_420,q_85,usm_0.66_1.00_0.01/5457e5_3d152e731c81438fb20824b7b1fc0f03~mv2_d_3456_2960_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_9b1f7493a2794f84a03d2339ce57b795~mv2_d_3456_2992_s_4_2.jpg/v1/fill/w_490,h_424,q_85,usm_0.66_1.00_0.01/5457e5_9b1f7493a2794f84a03d2339ce57b795~mv2_d_3456_2992_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 7,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,584.68"
+      },
+      {
+        "colorId": 3,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,789.21"
+      },
+      {
+        "colorId": 5,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,901.27"
+      },
+      {
+        "colorId": 1,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,406.94"
+      },
+      {
+        "colorId": 2,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,412.17"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,928.13"
+      }
+    ],
+    "categoryIds": [
+      1,
+      3,
+      4
+    ],
+    "description": "Exercitation labore adipisicing duis excepteur eiusmod enim ad cupidatat irure nulla cupidatat ex.",
+    "name": "Artiq",
+    "_id": "5a8cd3239b8ca4a4156723b7"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Domino',
-    name: 'Sapphire Spark Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_ac98f3b7128649ca86dd90aff2863811~mv2_d_3456_3008_s_4_2.jpg/v1/fill/w_490,h_426,q_85,usm_0.66_1.00_0.01/5457e5_ac98f3b7128649ca86dd90aff2863811~mv2_d_3456_3008_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_da921fba5e00420e85c03a3d8cac0041~mv2_d_3456_3056_s_4_2.jpg/v1/fill/w_490,h_433,q_85,usm_0.66_1.00_0.01/5457e5_da921fba5e00420e85c03a3d8cac0041~mv2_d_3456_3056_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 9,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,686.84"
+      },
+      {
+        "colorId": 8,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,131.42"
+      },
+      {
+        "colorId": 2,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,959.18"
+      },
+      {
+        "colorId": 10,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,964.84"
+      },
+      {
+        "colorId": 6,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,269.41"
+      }
+    ],
+    "categoryIds": [
+      2
+    ],
+    "description": "Laboris eiusmod incididunt sunt officia sit irure velit fugiat minim nisi anim.",
+    "name": "Kineticut",
+    "_id": "5a8cd323b4c974de2fd78ec3"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Bebop',
-    name: 'Flowers and Flamingos Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_8159a823793b43458729508b486f0f65~mv2_d_3432_2952_s_4_2.jpg/v1/fill/w_490,h_421,q_85,usm_0.66_1.00_0.01/5457e5_8159a823793b43458729508b486f0f65~mv2_d_3432_2952_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_e809b66e87934e4c980918ea8a30ba28~mv2_d_3248_4016_s_4_2.jpg/v1/fill/w_396,h_490,q_85,usm_0.66_1.00_0.01/5457e5_e809b66e87934e4c980918ea8a30ba28~mv2_d_3248_4016_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 4,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,273.51"
+      },
+      {
+        "colorId": 2,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,664.50"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,348.06"
+      },
+      {
+        "colorId": 6,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,715.57"
+      },
+      {
+        "colorId": 10,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,252.73"
+      },
+      {
+        "colorId": 2,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,885.27"
+      }
+    ],
+    "categoryIds": [
+      1,
+      3,
+      5
+    ],
+    "description": "In ipsum voluptate officia sint id sunt occaecat.",
+    "name": "Viagreat",
+    "_id": "5a8cd323976c61b7bbeb406e"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Domino',
-    name: 'Saturnalia Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_d651eb16c70c488aae4215ab9724a484~mv2_d_4308_3456_s_4_2.jpg/v1/fill/w_490,h_393,q_85,usm_0.66_1.00_0.01/5457e5_d651eb16c70c488aae4215ab9724a484~mv2_d_4308_3456_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_0b4d767a0ce34078b980a7a49a21c522~mv2_d_4332_3072_s_4_2.jpg/v1/fill/w_490,h_347,q_85,usm_0.66_1.00_0.01/5457e5_0b4d767a0ce34078b980a7a49a21c522~mv2_d_4332_3072_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 6,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,844.75"
+      },
+      {
+        "colorId": 5,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,647.66"
+      },
+      {
+        "colorId": 10,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,291.75"
+      },
+      {
+        "colorId": 1,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,828.76"
+      },
+      {
+        "colorId": 4,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,732.66"
+      }
+    ],
+    "categoryIds": [
+      3
+    ],
+    "description": "Consequat adipisicing veniam dolore qui incididunt.",
+    "name": "Andryx",
+    "_id": "5a8cd323df291c6e260f562f"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Roulette',
-    name: 'Purple Petal Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_e62f8302eaae4f578b7c6bed6cecb845~mv2_d_3948_2832_s_4_2.jpg/v1/fill/w_490,h_351,q_85,usm_0.66_1.00_0.01/5457e5_e62f8302eaae4f578b7c6bed6cecb845~mv2_d_3948_2832_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_fa434f27140545c6a39de8085b911f9c~mv2_d_3456_3088_s_4_2.jpg/v1/fill/w_490,h_438,q_85,usm_0.66_1.00_0.01/5457e5_fa434f27140545c6a39de8085b911f9c~mv2_d_3456_3088_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 6,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,534.34"
+      },
+      {
+        "colorId": 4,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,626.31"
+      },
+      {
+        "colorId": 7,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,842.33"
+      },
+      {
+        "colorId": 1,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,856.35"
+      },
+      {
+        "colorId": 7,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,361.43"
+      }
+    ],
+    "categoryIds": [
+      2
+    ],
+    "description": "Commodo commodo irure veniam enim anim culpa ad duis ex tempor dolor ex duis.",
+    "name": "Kongle",
+    "_id": "5a8cd3237d01d292f4c1a213"
   },
-
   {
-    categories: ['Top Hat on Lean', 'Trilby & Fedora'],
-    colorName: 'Domino',
-    name: 'Bokeh Top Hat on Lean',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_58fcab77a4ab4df5a81d0f6bc2331cad~mv2_d_3456_3744_s_4_2.jpg/v1/fill/w_452,h_490,q_85,usm_0.66_1.00_0.01/5457e5_58fcab77a4ab4df5a81d0f6bc2331cad~mv2_d_3456_3744_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_0279e3c3d4424c40b74a986811e67254~mv2_d_3240_2736_s_4_2.jpg/v1/fill/w_490,h_414,q_85,usm_0.66_1.00_0.01/5457e5_0279e3c3d4424c40b74a986811e67254~mv2_d_3240_2736_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,899.31"
+      },
+      {
+        "colorId": 3,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,441.48"
+      },
+      {
+        "colorId": 6,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,302.37"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,337.87"
+      },
+      {
+        "colorId": 10,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,921.12"
+      },
+      {
+        "colorId": 2,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,589.89"
+      }
+    ],
+    "categoryIds": [
+      2,
+      3
+    ],
+    "description": "Eu amet amet nostrud qui.",
+    "name": "Plasmos",
+    "_id": "5a8cd323b2d042f7ac5c8bf6"
   },
-
   {
-    categories: ['Derby/Bowler'],
-    colorName: 'Roulette',
-    name: 'All Seeing Eye Bowler',
-    imageUrl1: 'https://static.wixstatic.com/media/5457e5_e38e98e74c9f4b3a9534d7a113c38e32~mv2_d_3456_3008_s_4_2.jpg/v1/fill/w_490,h_426,q_85,usm_0.66_1.00_0.01/5457e5_e38e98e74c9f4b3a9534d7a113c38e32~mv2_d_3456_3008_s_4_2.jpg',
-    imageUrl2: 'https://static.wixstatic.com/media/5457e5_5538f6b7c1e547049917a03eec40afe5~mv2_d_3456_2560_s_4_2.jpg/v1/fill/w_490,h_363,q_85,usm_0.66_1.00_0.01/5457e5_5538f6b7c1e547049917a03eec40afe5~mv2_d_3456_2560_s_4_2.jpg'
+    "variants": [
+      {
+        "colorId": 9,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,758.84"
+      },
+      {
+        "colorId": 10,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,131.79"
+      },
+      {
+        "colorId": 1,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,335.24"
+      },
+      {
+        "colorId": 7,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,648.43"
+      },
+      {
+        "colorId": 1,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,534.47"
+      }
+    ],
+    "categoryIds": [
+      3,
+      4
+    ],
+    "description": "Ex reprehenderit incididunt veniam eu officia sint.",
+    "name": "Bytrex",
+    "_id": "5a8cd323bb4c127705486f3b"
+  },
+  {
+    "variants": [
+      {
+        "colorId": 10,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,225.75"
+      },
+      {
+        "colorId": 3,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,107.09"
+      },
+      {
+        "colorId": 10,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,558.90"
+      },
+      {
+        "colorId": 6,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,369.00"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,078.50"
+      }
+    ],
+    "categoryIds": [
+      2,
+      4
+    ],
+    "description": "Reprehenderit ex laborum cupidatat eu mollit enim magna mollit tempor id pariatur enim veniam.",
+    "name": "Kinetica",
+    "_id": "5a8cd323cc995b916e18f228"
+  },
+  {
+    "variants": [
+      {
+        "colorId": 9,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,735.02"
+      },
+      {
+        "colorId": 3,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,618.70"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,399.79"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,353.81"
+      },
+      {
+        "colorId": 6,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,235.94"
+      },
+      {
+        "colorId": 6,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,908.28"
+      }
+    ],
+    "categoryIds": [
+      1,
+      5,
+      2
+    ],
+    "description": "Sit cillum laborum nisi deserunt fugiat duis ut in velit.",
+    "name": "Fibrodyne",
+    "_id": "5a8cd323f55fd9c62ba2908f"
+  },
+  {
+    "variants": [
+      {
+        "colorId": 3,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,771.81"
+      },
+      {
+        "colorId": 10,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,077.32"
+      },
+      {
+        "colorId": 9,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,693.99"
+      },
+      {
+        "colorId": 8,
+        "promo": "",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,255.71"
+      }
+    ],
+    "categoryIds": [
+      4,
+      4,
+      4
+    ],
+    "description": "Labore mollit fugiat sint culpa proident aliquip deserunt labore id qui.",
+    "name": "Cosmosis",
+    "_id": "5a8cd32393a170c842df4211"
+  },
+  {
+    "variants": [
+      {
+        "colorId": 3,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,845.86"
+      },
+      {
+        "colorId": 9,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$2,280.46"
+      },
+      {
+        "colorId": 2,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,244.61"
+      },
+      {
+        "colorId": 6,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,762.83"
+      },
+      {
+        "colorId": 8,
+        "promo": "pressFavorites",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,948.34"
+      }
+    ],
+    "categoryIds": [
+      4,
+      2,
+      1
+    ],
+    "description": "Do quis incididunt velit fugiat ut magna culpa.",
+    "name": "Gaptec",
+    "_id": "5a8cd3247a39c7944616681b"
+  },
+  {
+    "variants": [
+      {
+        "colorId": 3,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,937.83"
+      },
+      {
+        "colorId": 5,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,142.54"
+      },
+      {
+        "colorId": 10,
+        "promo": "new",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,722.73"
+      },
+      {
+        "colorId": 9,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$1,535.05"
+      },
+      {
+        "colorId": 6,
+        "promo": "bestSeller",
+        "picture": "https://loremflickr.com/320/240",
+        "price": "$3,459.04"
+      }
+    ],
+    "categoryIds": [
+      4
+    ],
+    "description": "Est occaecat culpa pariatur nisi fugiat aliquip eu sint.",
+    "name": "Spherix",
+    "_id": "5a8cd324a8427584aee57db9"
   }
 ];
 

@@ -54,6 +54,9 @@
       left: 400px
       top: 305px
 
+      +modifier('with-many-selections')
+        display: none
+
 @media screen and (min-width: 54em)
   .filters
 
@@ -64,4 +67,5 @@
       top: 287px
 
       +modifier('with-many-selections')
+        display: inline-flex
         font-size: 13px

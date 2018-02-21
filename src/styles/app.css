@@ -79,7 +79,9 @@
       display: inline-flex;
       position: fixed;
       left: 400px;
-      top: 305px; } }
+      top: 305px; }
+      .filters__selections--with-many-selections {
+        display: none; } }
 
 @media screen and (min-width: 54em) {
   .filters__filter {
@@ -87,6 +89,7 @@
   .filters__selections {
     top: 287px; }
     .filters__selections--with-many-selections {
+      display: inline-flex;
       font-size: 13px; } }
 
 .header {

@@ -8,6 +8,7 @@
     "coffeescript": "1.12.7",
     "copy-to-clipboard": "^3.0.8",
     "js-cookie": "^2.2.0",
+    "node-sass-chokidar": "^0.0.3",
     "prop-types": "^15.5.10",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -50,7 +51,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest app/javascript/packs",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "jest": {
     "moduleNameMapper": {

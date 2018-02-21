@@ -1,0 +1,67 @@
+.filters
+  //background-color: aquamarine
+  padding: 0 15px
+  text-align: left
+  //width: 100%
+  border-top: $filter-border
+  border-bottom: $filter-border
+
+  +element('inner')
+    //background-color: beige
+
+  +element('label')
+    color: $filter-color
+    display: inline-block
+    font-weight: bold
+    text-align: left
+
+  +element('filter')
+    display: inline
+    margin-left: 20px
+
+  +element('selections')
+
+    +element('selection')
+      cursor: pointer
+      margin-left: 30px
+
+      +modifier('reset-all')
+        color: darkgreen
+
+      +element('x')
+        height: $square-size
+        display: inline-block
+        margin-left: 5px
+        width: $square-size
+
+@media screen and (min-width: 36em)
+  .filters
+    height: 50px
+
+    +element('filter')
+      display: inline-flex
+      margin-left: 40px
+      position: fixed
+      top: 305px
+      +modifier('categories')
+        left: 65px
+      +modifier('colors')
+        left: 200px
+
+    +element('selections')
+      display: inline-flex
+      position: fixed
+      left: 400px
+      top: 305px
+
+@media screen and (min-width: 54em)
+  .filters
+
+    +element('filter')
+      top: 287px
+
+    +element('selections')
+      top: 287px
+
+      +modifier('with-many-selections')
+        font-size: 13px

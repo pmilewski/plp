@@ -1,0 +1,48 @@
+.dropdown
+
+  +element('items')
+    background-color: $content-background-color
+    border: $filter-border
+    border-radius: 5px
+    list-style: none
+    margin-top: 17px
+    padding: 0 15px
+
+  +element('item')
+    cursor: pointer
+    padding: 10px 0
+
+    +element('square')
+      height: $square-size
+      border: $filter-border
+      background-color: $content-background-color
+      display: inline-block
+      margin-right: 5px
+      width: $square-size
+
+      +modifier('selected')
+        background-color: $filter-color
+
+    +element('color-circle')
+      height: $circle-size
+      border-radius: $square-size
+      display: inline-block
+      float: right
+      margin-left: 15px
+      width: $circle-size
+
+  +element('label')
+    color: $filter-color
+    cursor: pointer
+    font-weight: bold
+    text-decoration: none
+
+    +element('arrow')
+      margin-left: 5px
+
+@media screen and (min-width: 36em)
+  .dropdown
+
+    +element('items')
+      border-top: none
+      border-radius: 0 0 5px 5px

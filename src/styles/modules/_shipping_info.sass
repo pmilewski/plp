@@ -1,0 +1,11 @@
+.shipping-info
+  background-color: $content-background-color
+  padding: 1px
+
+  +element('long-p')
+    display: none
+
+@media screen and (min-width: 36em)
+  .shipping-info
+    +element('long-p')
+      display: unset

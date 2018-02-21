@@ -1,0 +1,38 @@
+.header
+  //background-image: url('http://www.newtutorials.com/matrixbackg/PTmatrix2SystemDark01.gif')
+  background-color: khaki
+
+  height: 150px
+  color: white
+
+  +element('logo')
+    animation: logo-spin infinite 20s linear
+
+    height: 80px
+
+  +element('title')
+    font-size: 1.5em
+    border-radius: 15px
+    background-color: darkorange
+    width: 50%
+    margin: 10px auto
+    padding: 5px
+    display: inline-block
+
+    &:hover
+      background-color: black
+
+
+@keyframes logo-spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@media screen and (min-width: 48em)
+  .header
+    +element('title')
+      border-radius: 5px
+      display: block
+
+//@media screen and (min-width: 62em)

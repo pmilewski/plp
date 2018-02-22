@@ -1,0 +1,68 @@
+.product-list
+
+  +element('item')
+    display: inline-block
+    padding: 45px
+    //width: 350px
+    font-size: 20px
+
+    +element('picture')
+      border-radius: 10px
+      height: 180px
+      width: 240px
+
+      overflow: hidden
+      transition-duration: 0.8s
+      transition-property: transform
+      &:hover
+        transform: rotate(-2deg)
+        -webkit-transform: rotate(-2deg)
+
+    +element('categories')
+      margin: 10px
+
+      +element('item')
+        border: 1px solid gray
+        border-radius: 3px
+        display: inline-block
+        font-size: 15px
+        padding: 5px
+        margin: 2px
+
+    +element('colors')
+      display: inline-block
+      margin: 10px 65px 0 0
+      float: right
+      +element('square')
+        height: $circle-size
+        //border-radius: $square-size
+        display: inline-block
+        float: right
+        margin-left: 15px
+        width: $circle-size
+        +modifier('selected')
+          border: 10px solid white
+          margin-top: -10px
+
+    +element('name')
+      margin: 0
+
+    +element('price')
+      margin: 0
+
+@media screen and (min-width: 36em)
+  .product-list
+
+    +element('item')
+      width: 450px
+
+      +element('picture')
+        height: 240px
+        width: 320px
+
+      +element('colors')
+
+        +element('square')
+          height: $circle-size*1.5
+          border-radius: $circle-size*1.5
+          width: $circle-size*1.5

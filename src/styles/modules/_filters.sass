@@ -24,6 +24,11 @@
     +element('selection')
       cursor: pointer
       margin-left: 30px
+      transition-duration: 0.8s
+      transition-property: transform
+      &:hover
+        transform: rotate(5deg)
+        -webkit-transform: rotate(5deg)
 
       +modifier('reset-all')
         color: darkgreen
@@ -41,18 +46,20 @@
     +element('filter')
       display: inline-flex
       margin-left: 40px
-      position: fixed
-      top: 305px
+      //position: fixed
+      //top: 305px
       +modifier('categories')
-        left: 65px
+        min-width: 205px
+        //left: 65px
       +modifier('colors')
-        left: 200px
+        min-width: 145px
+        //left: 200px
 
     +element('selections')
       display: inline-flex
-      position: fixed
-      left: 400px
-      top: 305px
+      //position: fixed
+      //left: 400px
+      //top: 305px
 
       +modifier('with-many-selections')
         display: none
@@ -61,10 +68,10 @@
   .filters
 
     +element('filter')
-      top: 287px
+      //top: 287px
 
     +element('selections')
-      top: 287px
+      //top: 287px
 
       +modifier('with-many-selections')
         display: inline-flex

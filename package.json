@@ -1,8 +1,6 @@
 {
   "license": "UNLICENSED",
   "dependencies": {
-    "@rails/webpacker": "^3.0.2",
-    "axios": "^0.17.0",
     "babel-preset-react": "^6.24.1",
     "caniuse-lite": "^1.0.3",
     "coffeescript": "1.12.7",
@@ -12,19 +10,12 @@
     "prop-types": "^15.5.10",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-filtered-multiselect": "^0.5.1",
-    "react-motion": "^0.5.2",
     "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "react-sortable-hoc": "^0.6.8",
-    "react-visibility-sensor": "^3.11.0",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "whatwg-fetch": "^2.0.3"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.9.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "enzyme": "^3.3.0",

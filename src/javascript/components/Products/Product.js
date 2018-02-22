@@ -12,7 +12,10 @@ const Product = ({
   product, filters, promoImg, selectProductVariant
 }) => (
   <div className="product-list__item">
-    <Colors {...{ product, filters, promoImg, selectProductVariant }} />
+    <Colors {...{
+      product, filters, promoImg, selectProductVariant
+      }}
+    />
     <Picture {...product} />
     <Name name={product.name} />
     <Price price={product.variants[product.selectedVariantIdx].price} />

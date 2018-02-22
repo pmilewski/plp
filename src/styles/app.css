@@ -182,3 +182,5 @@
 .app {
   background-color: beige;
   text-align: center; }
+  .app .footer {
+    height: 17vh; }

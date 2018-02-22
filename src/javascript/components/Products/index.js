@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { productsFilteredByCategoryAndColor } from '../../helpers';
 import Product from './Product';
 
-const Products = ({ products }) => (
+const Products = ({ filteredProducts }) => (
   <div className="products-list">
     {
-      products.map((product, index) =>
+      filteredProducts.map((product, index) =>
         <Product key={product._id} product={product} productIdx={index} />)
     }
   </div>
@@ -14,7 +14,7 @@ const Products = ({ products }) => (
 
 
 const mapState = (state, ownProps) => ({
-  products: state.products.products
+  filteredProducts: productsFilteredByCategoryAndColor(state)
 });
 
 const mapDispatch = (dispatch, ownProps) => ({

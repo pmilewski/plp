@@ -5,6 +5,7 @@ import Header from '../Header';
 import ShippingInfo from '../ShippingInfo';
 import Filters from '../Filters';
 import Products from '../Products';
+import Footer from '../Footer';
 
 const App = () => (
   <div className="app">
@@ -12,6 +13,7 @@ const App = () => (
     <ShippingInfo />
     <Filters />
     <Products />
+    <Footer />
   </div>
 );
 

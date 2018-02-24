@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { dummyClick } from '../../utilities';
 
 import Items from './Items';
 import Label from './Label';
-import { dummyClick } from '../../utilities';
 
 const Dropdown = ({
-  label, entries, onItemClick, onLabelClick, opened, selectedEntries
+  entries, label, onItemClick, onLabelClick, opened, selectedEntries
 }) => (
   <div className="dropdown">
     <Label label={label} onClick={onLabelClick} opened={opened} />
@@ -13,12 +14,22 @@ const Dropdown = ({
   </div>
 );
 
+Dropdown.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.object),
+  label: PropTypes.string,
+  onItemClick: PropTypes.func,
+  onLabelClick: PropTypes.func,
+  opened: PropTypes.bool,
+  selectedEntries: PropTypes.arrayOf(PropTypes.string)
+};
+
 Dropdown.defaultProps = {
-  label: 'label...',
   entries: [{ name: 'aaa' }, { name: 'bbb' }, { name: 'ccc' }],
-  selectedEntries: ['bbb'],
+  label: 'label...',
+  onItemClick: dummyClick,
   onLabelClick: dummyClick,
-  opened: false
+  opened: false,
+  selectedEntries: ['bbb']
 };
 
 export default Dropdown;

@@ -3,13 +3,13 @@ import React from 'react';
 class Selection extends React.Component {
   onSelectionClick = (event) => {
     event.preventDefault();
-    console.log(this.props.name)
+    console.log(this.props.name);
     this.props.onSelectionClick(this.props.name);
   };
 
   render = () => (
     <div
-      className={`filters__selections__selection ${this.props.name === 'Reset All' ? 'filters__selections__selection--reset-all' : ''}`}
+      className={`filters__selections__selection filters__selections__selection${this.props.modifier}`}
       onClick={this.onSelectionClick}
     >
       { this.props.name }

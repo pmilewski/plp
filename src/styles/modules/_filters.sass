@@ -1,13 +1,8 @@
 .filters
-  //background-color: aquamarine
   padding: 0 15px
   text-align: left
-  //width: 100%
   border-top: $filter-border
   border-bottom: $filter-border
-
-  +element('inner')
-    //background-color: beige
 
   +element('label')
     color: $filter-color
@@ -22,6 +17,8 @@
   +element('selections')
 
     +element('selection')
+      display: none
+
       cursor: pointer
       margin-left: 30px
       transition-duration: 0.8s
@@ -32,6 +29,17 @@
 
       +modifier('reset-all')
         color: darkgreen
+        display: inline-block
+
+      +modifier('hidden')
+        display: none
+
+      +modifier('small')
+        font-size: 8px
+        display: grid
+        width: 30px
+        height: 32px
+        overflow: hidden
 
       +element('x')
         height: $square-size
@@ -46,33 +54,19 @@
     +element('filter')
       display: inline-flex
       margin-left: 40px
-      //position: fixed
-      //top: 305px
+
       +modifier('categories')
         min-width: 205px
-        //left: 65px
+
       +modifier('colors')
         min-width: 145px
-        //left: 200px
 
     +element('selections')
       display: inline-flex
-      //position: fixed
-      //left: 400px
-      //top: 305px
 
-      +modifier('with-many-selections')
-        display: none
-
-@media screen and (min-width: 54em)
+@media screen and (min-width: 100em)
   .filters
 
-    +element('filter')
-      //top: 287px
-
     +element('selections')
-      //top: 287px
-
-      +modifier('with-many-selections')
+      +element('selection')
         display: inline-flex
-        font-size: 13px

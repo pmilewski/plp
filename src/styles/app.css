@@ -97,11 +97,8 @@
 
 .header {
   background-color: darkred;
-  height: 150px;
-  color: white; }
-  .header__logo {
-    animation: logo-spin infinite 20s linear;
-    height: 80px; }
+  color: white;
+  padding: 15px; }
   .header__title {
     font-size: 1.5em;
     border-radius: 15px;
@@ -112,12 +109,6 @@
     display: inline-block; }
     .header__title:hover {
       background-color: black; }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
 
 @media screen and (min-width: 48em) {
   .header__title {
@@ -151,6 +142,8 @@
     display: inline-block;
     margin: 10px 65px 0 0;
     float: right; }
+    .product-list__item__colors__promo {
+      margin-top: -10px; }
     .product-list__item__colors__square {
       height: 15px;
       display: inline-block;

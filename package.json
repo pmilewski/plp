@@ -2,12 +2,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
-    "caniuse-lite": "^1.0.3",
-    "coffeescript": "1.12.7",
-    "copy-to-clipboard": "^3.0.8",
-    "js-cookie": "^2.2.0",
     "node-sass-chokidar": "^0.0.3",
-    "prop-types": "^15.5.10",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
@@ -41,7 +36,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest app/javascript/packs",
+    "test": "jest src/javascript/",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
@@ -51,7 +46,7 @@
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     },
     "setupFiles": [
-      "./app/javascript/packs/test/jestsetup.js"
+      "./test/jestsetup.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

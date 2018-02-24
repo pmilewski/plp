@@ -5,7 +5,7 @@ const Colors = ({
 }) => (
   <p className="product-list__item__colors">
     { promoImg &&
-    <img alt="promo" src={promoImg} style={{ marginTop: '-10px' }} />
+    <img className="product-list__item__colors__promo" alt="promo" src={promoImg} />
     }
 
     { product.variants.map((variant, variantIdx) => (

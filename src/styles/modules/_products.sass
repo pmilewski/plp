@@ -3,7 +3,6 @@
   +element('item')
     display: inline-block
     padding: 45px
-    //width: 350px
     font-size: 20px
 
     +element('picture')
@@ -33,13 +32,17 @@
       display: inline-block
       margin: 10px 65px 0 0
       float: right
+
+      +element('promo')
+        margin-top: -10px
+
       +element('square')
         height: $circle-size
-        //border-radius: $square-size
         display: inline-block
         float: right
         margin-left: 15px
         width: $circle-size
+
         +modifier('selected')
           border: 10px solid white
           margin-top: -10px

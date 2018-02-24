@@ -10,7 +10,7 @@ const initialState = {
   selectedColors: []
 };
 
-export default function reducer(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   const selectedCategoryIdx = state.selectedCategories.indexOf(action.categoryName);
   const selectedColorIdx = state.selectedColors.indexOf(action.colorName);
 
@@ -66,4 +66,7 @@ export default function reducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export { initialState, reducer };
+export default reducer;

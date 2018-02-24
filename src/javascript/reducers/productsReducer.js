@@ -7,10 +7,9 @@ const initialState = {
   }))
 };
 
-export default function reducer(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SELECT_PRODUCT_VARIANT':
-      // debugger
       return {
         products: [
           ...state.products.slice(0, action.productIdx),
@@ -20,9 +19,11 @@ export default function reducer(state = initialState, action) {
           },
           ...state.products.slice(action.productIdx + 1, state.products.length)
         ]
-      }
-
+      };
     default:
       return state;
   }
-}
+};
+
+export { initialState, reducer };
+export default reducer;

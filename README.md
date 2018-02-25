@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [yarn start](#yarn-start)
   - [yarn test](#yarn-test)
   - [yarn build](#yarn-build)
+- [Demo Scripts](#demo)
 
 ## Available Scripts
 
@@ -40,3 +41,7 @@ See the section about [deployment](#deployment) for more information.
 ### `serve -s build`
 ### `predeploy`
 ### `deploy`
+
+## Demo
+
+http://pmilewski.github.io/plp

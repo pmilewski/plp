@@ -7,7 +7,7 @@ import Label from './Label';
 
 
 describe('proper component mount', () => {
-  it('looks as expected width default ', () => {
+  it('looks as expected with default props ', () => {
     const wrapper = mount(<Dropdown />);
     expect(wrapper.find(Label)).toHaveLength(1);
     expect(wrapper.find(Items)).toHaveLength(1);
@@ -19,7 +19,7 @@ describe('proper component mount', () => {
     expect(wrapper.prop('selectedEntries')).toEqual(['bbb']);
   });
 
-  it('looks as expected width another props ', () => {
+  it('looks as expected with another props ', () => {
     const props = {
       entries: [{ name: 'name1' }, { name: 'name2' }, { name: 'name3' }],
       label: 'Dropdown LaBeL',

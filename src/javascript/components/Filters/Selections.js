@@ -22,16 +22,11 @@ const Selections = ({
   </div>
 );
 
-const mapState = (state, ownProps) => {
-  const selectionsCount = state.filters.selectedCategories.length + state.filters.selectedColors.length;
-  // const selectionModifier = selectionsCount > 10 ? '--hidden' : (selectionsCount > 5 ? '--small' : '');
-  const selectionModifier = selectionsCount > 5 ? '--small' : '';
-  return {
-    selectedCategories: state.filters.selectedCategories,
-    selectedColors: state.filters.selectedColors,
-    selectionModifier
-  };
-};
+const mapState = (state, ownProps) => ({
+  selectedCategories: state.filters.selectedCategories,
+  selectedColors: state.filters.selectedColors,
+  selectionModifier: state.filters.selectedCategories.length + state.filters.selectedColors.length > 5 ? '--small' : ''
+});
 
 const mapDispatch = (dispatch, ownProps) => ({
   onResetAllClick: () => {

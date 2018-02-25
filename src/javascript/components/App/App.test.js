@@ -36,8 +36,12 @@ describe('proper component mount', () => {
     expect(wrapper.find(Product)).toHaveLength(20);
     expect(wrapper.find(Footer)).toHaveLength(1);
 
-    expect(storedState().filters.categoriesFilterOpened).toBe(false);
+    expect(storedState().filters.categories.length).toBe(5);
     expect(storedState().filters.colorsFilterOpened).toBe(false);
+    expect(storedState().filters.colors.length).toBe(10);
+    expect(storedState().filters.colorsFilterOpened).toBe(false);
+    expect(storedState().filters.selectedCategories.length).toBe(0);
+    expect(storedState().filters.selectedColors.length).toBe(0);
   });
 });
 

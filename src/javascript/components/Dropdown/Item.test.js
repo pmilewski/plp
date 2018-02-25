@@ -5,7 +5,7 @@ import Item from './Item';
 
 
 describe('proper component mount', () => {
-  it('looks as expected width default ', () => {
+  it('looks as expected with default props ', () => {
     const wrapper = mount(<Item />);
     expect(wrapper.prop('code')).toEqual('EN code');
     expect(wrapper.prop('name')).toEqual('EN name');
@@ -13,7 +13,7 @@ describe('proper component mount', () => {
     expect(wrapper.prop('selected')).toEqual(false);
   });
 
-  it('looks as expected width another props ', () => {
+  it('looks as expected with another props ', () => {
     const props = {
       code: 'expectedCode',
       name: 'expectedName',
@@ -24,6 +24,13 @@ describe('proper component mount', () => {
     expect(wrapper.prop('name')).toEqual(props.name);
     expect(wrapper.prop('onItemClick')).toBe(dummyClick);
     expect(wrapper.prop('selected')).toEqual(props.selected);
+  });
+
+  it('handles onClick', () => {
+    const props = { onItemClick: jest.fn() };
+    const wrapper = shallow(<Item {...props} />);
+    wrapper.find('li').simulate('click');
+    expect(props.onItemClick.mock.calls.length).toBe(1);
   });
 
   it('should not wrap content in a li tag', () => {

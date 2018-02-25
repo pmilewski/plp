@@ -3,7 +3,6 @@ import React from 'react';
 class Selection extends React.Component {
   onSelectionClick = (event) => {
     event.preventDefault();
-    console.log(this.props.name);
     this.props.onSelectionClick(this.props.name);
   };
 

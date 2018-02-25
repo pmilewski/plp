@@ -6,7 +6,7 @@ import Item from './Item';
 
 
 describe('proper component mount', () => {
-  it('looks as expected width default ', () => {
+  it('looks as expected with default props ', () => {
     const wrapper = mount(<Items />);
     expect(wrapper.find(Item)).toHaveLength(0);
     expect(wrapper.prop('entries')).toEqual([{ name: 'aaa' }, { name: 'bbb' }, { name: 'ccc' }]);
@@ -15,7 +15,7 @@ describe('proper component mount', () => {
     expect(wrapper.prop('selectedEntries')).toEqual(['bbb']);
   });
 
-  it('looks as expected width another props ', () => {
+  it('looks as expected with another props ', () => {
     const props = {
       entries: [{ name: 'name1' }, { name: 'name2' }, { name: 'name3' }, { name: 'name4' }],
       opened: true,

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { emptyFunction } from '../../utilities';
 
 const Colors = ({
   product, filters, promoImg, selectProductVariant
@@ -23,5 +25,19 @@ const Colors = ({
     ))}
   </p>
 );
+
+Colors.propTypes = {
+  product: PropTypes.object,
+  filters: PropTypes.object,
+  promoImg: PropTypes.string,
+  selectProductVariant: PropTypes.func
+};
+
+Colors.defaultProps = {
+  product: { variants: [] },
+  filters: { colors: [] },
+  promoImg: '',
+  selectProductVariant: emptyFunction
+};
 
 export default Colors;

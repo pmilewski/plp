@@ -1,5 +1,6 @@
 {
   "license": "UNLICENSED",
+  "homepage": "http://pmilewski.github.io/plp",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "node-sass-chokidar": "^0.0.3",
@@ -22,6 +23,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "^1.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.4",
     "jest-cli": "^22.0.4",
@@ -38,9 +40,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest src/javascript/",
-    "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "moduleNameMapper": {

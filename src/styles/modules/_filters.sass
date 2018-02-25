@@ -30,16 +30,7 @@
       +modifier('reset-all')
         color: darkgreen
         display: inline-block
-
-      +modifier('hidden')
-        display: none
-
-      +modifier('small')
-        font-size: 8px
-        display: grid
-        width: 30px
-        height: 32px
-        overflow: hidden
+        padding-bottom: 25px
 
       +element('x')
         height: $square-size
@@ -64,9 +55,21 @@
     +element('selections')
       display: inline-flex
 
+      +element('selection')
+
+        +modifier('reset-all')
+          margin-left: -33px
+
 @media screen and (min-width: 100em)
   .filters
 
     +element('selections')
+
       +element('selection')
         display: inline-flex
+
+        +modifier('small')
+          font-size: 8px
+          display: grid
+          width: 30px
+          height: 32px
